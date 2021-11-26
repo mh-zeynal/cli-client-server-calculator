@@ -23,6 +23,8 @@ Flags:
 to use this command we recommend you to use this pattern `csp enable FIRST_NUMBER SECOND_NUMBER ... nTH_NUMBER OPERATOR(+, -, *, /)` like so:  
 ![picture alt](/gifs/Record_2021_11_27_01_43_51_906_1.gif)  
 NOTE: be careful that you must turn server on at first to get result  
+  
+  
 `csp server`->  
 to turn your server on you must use this command(in another CLI window) as below:  
 ![picture alt](/gifs/Record_2021_11_27_01_57_50_310.gif)  
