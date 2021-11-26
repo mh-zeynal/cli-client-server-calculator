@@ -16,9 +16,9 @@ limitations under the License.
 package main
 
 import (
-	"csp/internal/commands"
+	"csp/cmd"
 )
 
 func main() {
-	commands.Execute()
+	cmd.Execute()
 }
