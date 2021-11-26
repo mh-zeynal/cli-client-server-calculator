@@ -10,10 +10,14 @@ import (
 )
 
 var(
-	clientDial net.Conn
-	clientError error
+	clientDial net.Conn //client socket
+	clientError error	//connection error
 )
 
+/*
+enableCmd is a predefined command to connect client to the server
+and let it to send data once
+*/
 var enableCmd = &cobra.Command{
 	Use:   "enable",
 	Short: "client-side starter command",
@@ -22,10 +26,12 @@ var enableCmd = &cobra.Command{
 	Run:   enableSocket,
 }
 
+//adds enableCmd to rootCmd
 func init() {
 	rootCmd.AddCommand(enableCmd)
 }
 
+//makes a connection between client and server and
 func enableSocket(cmd *cobra.Command, args []string) {
 	clientDial, clientError = net.Dial("tcp", "localhost:8080")
 	if clientError != nil {

@@ -10,10 +10,10 @@ import (
 )
 
 var (
-	server net.Listener
-	err error
+	server net.Listener //server socket
+	err error			//connection error
 	)
-
+//serverCmd is a predefined command to launch server a let clients send message to it
 var serverCmd = &cobra.Command{
 	Use:   "server",
 	Short: "runs server",
@@ -21,10 +21,12 @@ var serverCmd = &cobra.Command{
 	Run:   runServer,
 }
 
+//adds serverCmd to rootCmd
 func init() {
 	rootCmd.AddCommand(serverCmd)
 }
 
+//runs the server and also does the calculations and send result to client
 func runServer(cmd *cobra.Command, args []string) {
 	server, err = net.Listen("tcp", ":8080")
 	fmt.Println("now server is listening...")

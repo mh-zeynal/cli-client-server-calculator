@@ -5,6 +5,7 @@ import (
 	"strconv"
 )
 
+//calls a function to do an operation based on operator
 func DoOperation(nums []int, operator string) string {
 	switch operator {
 	case "+":
@@ -19,6 +20,7 @@ func DoOperation(nums []int, operator string) string {
 	return ""
 }
 
+//sums numbers and returns result as a string
 func doSum(nums []int) string {
 	var res int
 	for _, arg := range nums{
@@ -27,6 +29,7 @@ func doSum(nums []int) string {
 	return strconv.Itoa(res)
 }
 
+//products numbers and returns result as a string
 func doProduct(nums []int) string {
 	var res int
 	for i := 0; i < len(nums); i++ {
@@ -39,6 +42,7 @@ func doProduct(nums []int) string {
 	return strconv.Itoa(res)
 }
 
+//subtracts numbers and returns result as a string
 func doSubmission(nums []int) string {
 	var res int
 	for i := 0; i < len(nums); i++ {
@@ -51,6 +55,7 @@ func doSubmission(nums []int) string {
 	return strconv.Itoa(res)
 }
 
+//divides numbers and returns result as a string
 func doDivision(nums []int) string {
 	var res float32
 	for i := 0; i < len(nums); i++ {
