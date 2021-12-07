@@ -1,4 +1,4 @@
-# cli-client-server #
+# cli-client-server-calculator #
 ### a cli client-server app with cobra ###  
 # overview #  
 this project is a cli client-server app in which client gives a bunch of numbers with an operator to server  
