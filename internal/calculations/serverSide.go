@@ -1,72 +1,29 @@
 package calculations
 
 import (
-	"fmt"
-	"strconv"
+	"csp/internal/types"
 )
 
 //calls a function to do an operation based on operator
 func DoOperation(nums []int, operator string) string {
+	var temp types.CalculateResult
 	switch operator {
 	case "+":
-		return doSum(nums)
+		temp = &types.Sum{Nums: nums};      return getFinalValue(temp)
 	case "*":
-		return doProduct(nums)
+		temp = &types.Product{Nums: nums};  return getFinalValue(temp)
 	case "-":
-		return doSubmission(nums)
+		temp = &types.Subtract{Nums: nums}; return getFinalValue(temp)
 	case "/":
-		return doDivision(nums)
+		temp = &types.Divide{Nums: nums};   return getFinalValue(temp)
 	}
 	return ""
 }
 
-//sums numbers and returns result as a string
-func doSum(nums []int) string {
-	var res int
-	for _, arg := range nums{
-		res += arg
-	}
-	return strconv.Itoa(res)
+//calculates the result depending on struct type
+func getFinalValue(c types.CalculateResult) string {
+	return c.GetResult()
 }
 
-//products numbers and returns result as a string
-func doProduct(nums []int) string {
-	var res int
-	for i := 0; i < len(nums); i++ {
-		if i != 0 {
-			res *= nums[i]
-			continue
-		}
-		res = nums[i]
-	}
-	return strconv.Itoa(res)
-}
 
-//subtracts numbers and returns result as a string
-func doSubmission(nums []int) string {
-	var res int
-	for i := 0; i < len(nums); i++ {
-		if i != 0 {
-			res -= nums[i]
-			continue
-		}
-		res = nums[i]
-	}
-	return strconv.Itoa(res)
-}
 
-//divides numbers and returns result as a string
-func doDivision(nums []int) string {
-	var res float32
-	for i := 0; i < len(nums); i++ {
-		if i != 0 {
-			if nums[i] == 0 {
-				return "divide by zero"
-			}
-			res /= float32(nums[i])
-			continue
-		}
-		res = float32(nums[i])
-	}
-	return fmt.Sprintf("%g", res)
-}

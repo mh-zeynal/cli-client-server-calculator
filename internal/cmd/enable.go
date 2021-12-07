@@ -1,12 +1,12 @@
 package cmd
 
 import (
+	"csp/internal/calculations"
 	"csp/internal/types"
 	"encoding/json"
 	"fmt"
 	"github.com/spf13/cobra"
 	"net"
-	"csp/internal/calculations"
 )
 
 var(
